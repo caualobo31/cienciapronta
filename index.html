@@ -17,7 +17,7 @@
 
   <!-- UTMfy — TikTok Pixel -->
   <script>
-    window.tikTokPixelId = "69e0978c18ea0298b532ad03";
+    window.tikTokPixelId = "69e24261f27dd2142b115e7a";
     var a = document.createElement("script");
     a.setAttribute("async", "");
     a.setAttribute("defer", "");
@@ -2585,23 +2585,37 @@
       container.appendChild(iframe);
     }
 
-    // ---- Popup de upgrade + UTM params ----
-    window.addEventListener('load', function() {
-      // Injeta UTM params em TODOS os links de checkout (incluindo popup)
-      var params = window.location.search;
-      if (params) {
-        document.querySelectorAll('a.checkout-link').forEach(function(a) {
-          if (a.href.indexOf('?') === -1) {
-            a.href = a.href + params;
-          }
+    // ---- UTM passthrough para checkout ----
+    function buildCheckoutUrl(base) {
+      var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'];
+      var pageParams = new URLSearchParams(window.location.search);
+      var checkoutParams = new URLSearchParams(base.indexOf('?') !== -1 ? base.split('?')[1] : '');
+      var cleanBase = base.split('?')[0];
+      utmKeys.forEach(function(k) {
+        if (pageParams.has(k)) checkoutParams.set(k, pageParams.get(k));
+      });
+      var qs = checkoutParams.toString();
+      return qs ? cleanBase + '?' + qs : cleanBase;
+    }
+
+    function applyUtmToCheckouts() {
+      var selectors = ['a.checkout-link', '#btn-basico', '#popup-btn-basico'];
+      selectors.forEach(function(sel) {
+        document.querySelectorAll(sel).forEach(function(a) {
+          a.addEventListener('click', function(e) {
+            var newUrl = buildCheckoutUrl(a.href);
+            if (newUrl !== a.href) {
+              e.preventDefault();
+              window.location.href = newUrl;
+            }
+          });
         });
-        // btn-basico não tem classe checkout-link, injeta manualmente
-        var b = document.getElementById('btn-basico');
-        if (b && b.href.indexOf('?') === -1) b.href = b.href + params;
-        // popup-btn-basico agora é checkout-link, mas garante injeção também
-        var pb = document.getElementById('popup-btn-basico');
-        if (pb && pb.href.indexOf('?') === -1) pb.href = pb.href + params;
-      }
+      });
+    }
+
+    // ---- Popup de upgrade ----
+    window.addEventListener('load', function() {
+      applyUtmToCheckouts();
 
       var btnBasico = document.getElementById('btn-basico');
       var popup = document.getElementById('upgrade-popup');
