@@ -1064,7 +1064,16 @@
       font-weight: 700;
       font-size: .97rem;
       color: var(--gray-900);
-      margin-bottom: .4rem;
+      margin-bottom: .5rem;
+    }
+
+    .bonus-card__img {
+      width: 100%;
+      max-height: 140px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      margin-bottom: .7rem;
+      display: block;
     }
 
     .bonus-card__desc {
@@ -2070,37 +2079,6 @@
   </section>
 
   <!-- ============================================================
-       BLOCO 6 — RESULTADOS RÁPIDOS
-  ============================================================ -->
-  <section class="section section--dark" aria-label="Resultados esperados">
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="eyebrow" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:var(--green-400);">✨ Resultados reais</span>
-        <h2 class="section-title" style="color:white;">O que você vai perceber nas <span style="color:var(--amber-300)">primeiras</span> aplicações</h2>
-        <p class="results__intro">Não prometemos milagres. <strong style="color:white;">Prometemos aulas que os alunos vão lembrar.</strong></p>
-      </div>
-      <div class="results__grid">
-        <div class="result-item reveal reveal-delay-1">
-          <span class="result-item__icon">🙋</span>
-          <p class="result-item__text">Mais participação espontânea</p>
-        </div>
-        <div class="result-item reveal reveal-delay-2">
-          <span class="result-item__icon">🎯</span>
-          <p class="result-item__text">Alunos atentos desde o primeiro minuto</p>
-        </div>
-        <div class="result-item reveal reveal-delay-3">
-          <span class="result-item__icon">⏳</span>
-          <p class="result-item__text">Menos tempo preparando atividades</p>
-        </div>
-        <div class="result-item reveal reveal-delay-4">
-          <span class="result-item__icon">💡</span>
-          <p class="result-item__text">Conceitos difíceis ficam visuais e claros</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        BLOCO 7 — O QUE ESTÁ INCLUSO
   ============================================================ -->
   <section class="section" aria-label="Conteúdo do produto">
@@ -2110,7 +2088,7 @@
           <span class="eyebrow">📦 O que está incluso</span>
           <h2 class="section-title"><span class="hl">+500</span> Experiências de Ciências Prontas</h2>
           <p class="subhead">Tudo que você precisa para aplicar, sem comprar nada especial.</p>
-          <img src="img/mockup-simples.png" alt="Prévia do material Ciência Pronta" style="width:100%;max-width:380px;margin:1.2rem 0 1.6rem;filter:drop-shadow(0 16px 40px rgba(0,0,0,.18));animation:floatImg 4s ease-in-out infinite;" loading="lazy" decoding="async" />
+          <img src="img/mockup-simples.png" alt="Prévia do material Ciência Pronta" style="width:100%;max-width:460px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);margin:1.2rem 0 1.6rem;" loading="lazy" decoding="async" />
           <p class="includes__desc">
             Copos, vinagre, balões, papel, água. Nada de véspera, nada de laboratório.
           </p>
@@ -2177,6 +2155,7 @@
           <span class="bonus-card__icon">🎁</span>
           <div>
             <div class="bonus-card__name">Bônus #1 — Planejamento Turbo de Aula Prática</div>
+            <img src="img/bonus-planejamento.png" alt="Planejamento Turbo" class="bonus-card__img" loading="lazy" decoding="async" />
             <p class="bonus-card__desc">Estruture qualquer aula experimental <strong>em menos de 5 minutos</strong>, com sequência lógica e tempo estimado.</p>
             <div class="bonus-card__price">
               <span class="price-strike">R$47</span>
@@ -2188,6 +2167,7 @@
           <span class="bonus-card__icon">🛡️</span>
           <div>
             <div class="bonus-card__name">Bônus #2 — Guia de Aplicação Segura em Sala</div>
+            <img src="img/bonus-guia-aplicacao.png" alt="Guia de Aplicação Segura" class="bonus-card__img" loading="lazy" decoding="async" />
             <p class="bonus-card__desc">Cuidados básicos para cada tipo de experimento — <strong>linguagem adaptada para qualquer série.</strong></p>
             <div class="bonus-card__price">
               <span class="price-strike">R$17</span>
@@ -2199,6 +2179,7 @@
           <span class="bonus-card__icon">💬</span>
           <div>
             <div class="bonus-card__name">Bônus #3 — Banco de Perguntas que Engajam</div>
+            <img src="img/bonus-banco-perg.png" alt="Banco de Perguntas" class="bonus-card__img" loading="lazy" decoding="async" />
             <p class="bonus-card__desc"><strong>+100 perguntas</strong> organizadas por experimento para fazer os alunos pensarem e participarem.</p>
             <div class="bonus-card__price">
               <span class="price-strike">R$27</span>
@@ -2210,6 +2191,7 @@
           <span class="bonus-card__icon">🔇</span>
           <div>
             <div class="bonus-card__name">Bônus #4 — Como Evitar Bagunça em Aula Experimental</div>
+            <img src="img/bonus-como-evitar.png" alt="Como Evitar Bagunça" class="bonus-card__img" loading="lazy" decoding="async" />
             <p class="bonus-card__desc">Estratégias de gestão para a <strong>energia não virar caos</strong> durante as experiências.</p>
             <div class="bonus-card__price">
               <span class="price-strike">R$37</span>
