@@ -1860,9 +1860,9 @@
           </div>
           <div class="hero__social-proof">
             <div class="hero__avatars">
-              <div class="hero__avatar"><img src="img/depoimento-1.jpg" alt="Daniela C." width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'">DC</div>
-              <div class="hero__avatar"><img src="img/depoimento-2.webp" alt="Eduardo P." width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'">EP</div>
-              <div class="hero__avatar"><img src="img/depoimento-3.jpg" alt="Mariana S." width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'">MS</div>
+              <div class="hero__avatar"><img src="img/dep-daniela.webp" alt="Daniela C." width="32" height="32" loading="lazy" decoding="async">DC</div>
+              <div class="hero__avatar"><img src="img/dep-edu.webp" alt="Eduardo P." width="32" height="32" loading="lazy" decoding="async">EP</div>
+              <div class="hero__avatar"><img src="img/dep-mariana.webp" alt="Mariana S." width="32" height="32" loading="lazy" decoding="async">MS</div>
               <div class="hero__avatar">+</div>
             </div>
             +1.200 professores já estão usando
@@ -2791,6 +2791,7 @@
   </div>
 
   <script>
+    (window.requestIdleCallback || function(cb){ setTimeout(cb, 200); })(function() {
     (function () {
       var buyers = [
         { name: 'Ana Paula',       initial: 'A', city: 'de Belo Horizonte', time: 'Há 2 minutos',  color: '#7c3aed' },
@@ -2848,6 +2849,7 @@
         setInterval(show, 20000);
       }, 5000);
     })();
+    }); // end requestIdleCallback
   </script>
 
 </body>
